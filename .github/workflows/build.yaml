@@ -1,5 +1,5 @@
 name: Build code
-run-name: ${{ github.actor }} is build code branch ${{ github.git_branch }}
+run-name: ${{ github.actor }} is build code on branch ${{ github.git_branch }}
 on:
   push:
     branches: [develop]
