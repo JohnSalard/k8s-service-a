@@ -4,6 +4,8 @@ run-name: ${{ github.actor }} is deploying this app 🚀
 on:
   push:
     branches: [develop]
+env:
+  NEW_TAG_IMAGE: latest
 
 jobs:
   push_to_registry:
