@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: tcc-service-a-configmap
+  namespace: group-3-dev
+data:
+  ENV_NAME: DEV

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tcc-service-a-deployment
+  namespace: group-3-dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tcc-service-a
+  template:
+    metadata:
+      labels:
+        app: tcc-service-a
+    spec:
+      containers:
+        - name: tcc-service-a
+          image: johnsalard/tcc-service-a:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+          env:
+            - name: ENV_NAME
+              valueFrom:
+                configMapKeyRef:
+                  name: tcc-service-a-configmap
+                  key: ENV_NAME
