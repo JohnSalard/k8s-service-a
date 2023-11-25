@@ -1,8 +1,10 @@
 name: Build code
-
+run-name: ${{ github.actor }} is build code branch ${{ github.git_branch }}
 on:
   push:
     branches: [develop]
+  pull_request:
+    branches: [main]
 #  schedule:
 #    - cron: "0 06 1,15 * *" # 6am on 1st and 15th of every month
   workflow_dispatch: # allow manual runs
